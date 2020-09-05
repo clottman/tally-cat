@@ -13,13 +13,23 @@
     background: linear-gradient(to left, #cc6a87, #8d448b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
   
-  h1 {
+  h1, .text {
     font-style: italic;
     color: #5026a7;
     background-color: #eccd8f;
-    width: fit-content;
+    max-width: calc(100vw - 2em);
     padding: 10px;
     border-radius: 5px;
+  }
+  
+  footer {
+    display: flex;
+    flex-direction: column;
+  }
+  footer .text {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .bold {
