@@ -106,24 +106,21 @@ button:not(.glitchButtonElement):active {
   margin: auto;
 }
 
+@media (max-width: 600px) {
+  .glide__slides {
+    margin-bottom: 0;
+  }
+}
+
 footer {
   padding-top: 25px;
+  margin-top: 25px;
   border-top: 1px solid lightgrey;
 }
 
-/* https://medium.com/@zerox/keep-that-damn-footer-at-the-bottom-c7a921cb9551 */
 .main-container {
-  min-height: 100vh;
-  overflow: hidden;
-  display: block;
-  position: relative;
-  padding-bottom: 400px; /* height of the footer */
-}
-
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .glide.centered {
