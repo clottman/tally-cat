@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+        <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+        <script src="https://button.glitch.me/button.js"></script>
+
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:creator" content="@casseylottman"/>
+        <meta property="og:url" content="https://tally-cat.glitch.me/"/>
+        <meta property="og:title" content="All about Tally Cat"/>
+        <meta property="og:description" content="Soul Patch's sister and rival."/>
+        <meta property="og:image" content=""/>
+        <meta property="og:image:width" content="400"/>
+        <meta property="og:image:height" content="300"/>
+        <meta property="og:type" content="website"/>
+
+        <script src="https://code.jquery.com/jquery-2.2.1.min.js"
+            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+            crossorigin="anonymous"></script>
+
+        <title>Tally Cat</title>
+        <meta name="description" content="All about Tally Cat"/>
+
+        <link rel="shortcut icon" type="image/png" href="https://cdn.glitch.com/3cd90178-c382-4fa7-9b2a-70f4e28f2830%2Fcat.png?1551390727074"/>
+
+        <link rel="stylesheet" href="style.css">
+        <script src="lib/client.js" defer></script>
+        <script src="lib/glide.min.js"></script>
+        <link rel="stylesheet" href="lib/glide.core.min.css">
+
+    </head>
+    <body>
+        {{ content | safe }}
+    </body>
+</html>

@@ -1,0 +1,73 @@
+---
+layout: layouts/default.njk
+---
+
+<div class="main-container">
+  <header>
+    <h1>Meet Tally</h1>
+  </header>
+
+  <main>
+    <div class="glide centered">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+          <% for (var i = 0; i < catFacts.length; i++) { %>
+          <li class="glide__slide">
+            <div>
+              <% if (catFacts[i].orientation === 'vertical') { %>
+              <img
+                src="<%- catFacts[i].image -%>"
+                alt="<%- catFacts[i].altText -%>"
+                height="400"
+                width="300"
+              />
+              <% } %> <% if (catFacts[i].orientation === 'horizontal') { %>
+              <img
+                src="<%- catFacts[i].image -%>"
+                alt="<%- catFacts[i].altText -%>"
+                height="300"
+                width="400"
+              />
+              <% } %>
+              <p><%- catFacts[i].description -%></p>
+            </div>
+          </li>
+          <% } %>
+        </ul>
+      </div>
+
+      <div data-glide-el="controls">
+        <button data-glide-dir="<<">Start</button>
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+          Previous
+        </button>
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+          Next
+        </button>
+        <button data-glide-dir=">>">End</button>
+      </div>
+    </div>
+  </main>
+</div>
+<footer>
+  <webring-banner>
+    <p>
+      Member of the
+      <a href="https://ring-of-pets.glitch.me">Ring of Pets</a> webring
+    </p>
+    <a href="https://ring-of-pets.glitch.me/prev">Previous</a>
+    <a href="https://ring-of-pets.glitch.me/random">Random</a>
+    <a href="https://ring-of-pets.glitch.me/next">Next</a>
+  </webring-banner>
+  <script
+    async
+    src="https://ring-of-pets.glitch.me/embed.js"
+    charset="utf-8"
+  ></script>
+</footer>
+
+<script type="text/javascript">
+  (function () {
+    new Glide(".glide").mount();
+  })();
+</script>
