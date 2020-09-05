@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "build": "eleventy",
-    "start": "eleventy --serve",
+    "start": "eleventy --serve"
   },
   "keywords": [],
   "author": "",
