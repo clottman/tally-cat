@@ -2,114 +2,132 @@
 /* called by your view template */
 
 * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Benton Sans', 'Helvetica Neue', helvetica, arial, sans-serif;
-    margin: 2em;
-    background: #d3cce3; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #cc6a87, #8d448b); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #cc6a87, #8d448b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  }
-  
-  h1 {
-    font-style: italic;
-    color: #5026a7;
-    background-color: #eccd8f;
-    width: fit-content;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
-  .bold {
-    font-weight: bold;
-  }
-  
-  .glide p {
-    max-width: min(calc(100vw - 20px - 2em), 600px);
-  }
-  
-  form {
-    margin-bottom: 25px;
-    padding: 15px;
-    background-color: cyan;
-    display: inline-block;
-    width: 100%;
-    max-width: 340px;
-    border-radius: 3px;
-  }
-  
-  input {
-    display: block;
-    margin-bottom: 10px;
-    padding: 5px;
-    width: 100%;
-    border: 1px solid lightgrey;
-    border-radius: 3px;
-    font-size: 16px;
-  }
-  
-  button:not(.glitchButtonElement) {
-    font-size: 16px;
-    border-radius: 3px;
-    background-color: #cc6a87;
-    border: 2px solid #eccd8f;
-    box-shadow: 2px 2px teal;
-    cursor: pointer;
-  }
-  
-  button:not(.glitchButtonElement):hover {
-    background-color: #eccd8f;
-  }
-  
-  button:not(.glitchButtonElement):active {
-    box-shadow: none;
-  }
-  
-  .glide li {
-    margin-bottom: 5px;
-    max-width: min(calc(100vw - 20px - 2em), 600px);
-    padding: 15px 10px;
-  }
-  
-  .glide li img {
-    border: 3px solid #eccd8f;
-    margin-bottom: 10px;
-  }
-  
-  .glide li p {
-    color: #5026a7;
-    background-color: #eccd8f;
-    width: fit-content;
-    padding: 10px;
-    border-radius: 5px;
-    margin: auto
-  }
-  
-  footer {
-    margin-top: 50px;
-    padding-top: 25px;
-    border-top: 1px solid lightgrey;
-  }
-  
-  /* https://medium.com/@zerox/keep-that-damn-footer-at-the-bottom-c7a921cb9551 */
-  .main-container {
-    min-height: 100vh; /* will cover the 100% of viewport */
-    overflow: hidden;
-    display: block;
-    position: relative;
-    padding-bottom: 200px; /* height of your footer */
-  }
-  
-  footer {
-    position: relative;
-    bottom: 0;
-  }
-  
-  .glide.centered {
-    text-align: center;
-    margin: auto auto;
-    width: min(calc(100vw - 20px - 2em), 600px);
-  }
-  
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  margin: 2em;
+  background: #d3cce3; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #cc6a87,
+    #8d448b
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #cc6a87,
+    #8d448b
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+h1,
+.text {
+  font-style: italic;
+  color: #5026a7;
+  background-color: #eccd8f;
+  max-width: calc(100vw - 2em);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+}
+footer .text {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.glide p {
+  max-width: min(calc(100vw - 20px - 2em), 600px);
+}
+
+form {
+  margin-bottom: 25px;
+  padding: 15px;
+  background-color: cyan;
+  display: inline-block;
+  width: 100%;
+  max-width: 340px;
+  border-radius: 3px;
+}
+
+input {
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 100%;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+button:not(.glitchButtonElement) {
+  font-size: 16px;
+  border-radius: 3px;
+  background-color: #cc6a87;
+  border: 2px solid #eccd8f;
+  box-shadow: 2px 2px teal;
+  cursor: pointer;
+}
+
+button:not(.glitchButtonElement):hover {
+  background-color: #eccd8f;
+}
+
+button:not(.glitchButtonElement):active {
+  box-shadow: none;
+}
+
+.glide li {
+  margin-bottom: 5px;
+  max-width: min(calc(100vw - 20px - 2em), 600px);
+  padding: 15px 10px;
+}
+
+.glide li img {
+  border: 3px solid #eccd8f;
+  margin-bottom: 10px;
+}
+
+.glide li p {
+  color: #5026a7;
+  background-color: #eccd8f;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 5px;
+  margin: auto;
+}
+
+footer {
+  padding-top: 25px;
+  border-top: 1px solid lightgrey;
+}
+
+/* https://medium.com/@zerox/keep-that-damn-footer-at-the-bottom-c7a921cb9551 */
+.main-container {
+  min-height: 100vh;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 400px; /* height of the footer */
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.glide.centered {
+  text-align: center;
+  margin: auto auto;
+  width: min(calc(100vw - 20px - 2em), 600px);
+}
