@@ -14,7 +14,6 @@ async function imageShortcode(src, alt, sizes) {
     decoding: "async",
   };
 
-  // You bet we throw an error on missing alt in `imageAttributes` (alt="" works okay)
   return Image.generateHTML(metadata, imageAttributes);
 }
 
