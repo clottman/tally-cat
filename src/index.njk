@@ -11,28 +11,18 @@ layout: layouts/default.njk
     <div class="glide centered">
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
-          <% for (var i = 0; i < catFacts.length; i++) { %>
+          {% for fact in catFacts %}
           <li class="glide__slide">
             <div>
-              <% if (catFacts[i].orientation === 'vertical') { %>
-              <img
-                src="<%- catFacts[i].image -%>"
-                alt="<%- catFacts[i].altText -%>"
-                height="400"
-                width="300"
-              />
-              <% } %> <% if (catFacts[i].orientation === 'horizontal') { %>
-              <img
-                src="<%- catFacts[i].image -%>"
-                alt="<%- catFacts[i].altText -%>"
-                height="300"
-                width="400"
-              />
-              <% } %>
-              <p><%- catFacts[i].description -%></p>
+            {% if (fact.orientation == 'vertical') %}
+              {% image fact.image, fact.altText, "300px" %}
+            {% elif (fact.orientation == 'horizontal') %}
+              {% image fact.image, fact.altText, "400px" %}
+            {% endif %}
+              <p>{{ fact.description }}</p>
             </div>
           </li>
-          <% } %>
+        {% endfor %}
         </ul>
       </div>
 
