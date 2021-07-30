@@ -3,7 +3,8 @@ const Image = require("@11ty/eleventy-img");
 async function imageShortcode(src, alt, sizes) {
   let metadata = await Image(src, {
     widths: [150, 300],
-    formats: ["webp", "jpeg"]
+    formats: ["webp", "jpeg"],
+    outputDir: './dist/img/'
   });
 
   let imageAttributes = {
@@ -19,7 +20,6 @@ async function imageShortcode(src, alt, sizes) {
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
-    eleventyConfig.addPassthroughCopy('img/');
     // eleventyConfig.addFilter( "myFilter", function() {});
    eleventyConfig.setTemplateFormats(["njk", "ejs", "js", "css"]);
     return {
