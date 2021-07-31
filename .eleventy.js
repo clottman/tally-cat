@@ -17,8 +17,26 @@ async function imageShortcode(src, alt, sizes) {
   return Image.generateHTML(metadata, imageAttributes);
 }
 
+// get just the output url for an image, for use in social cards
+async function urlShortcode(src, alt) {
+  if(alt === undefined) {
+    // You bet we throw an error on missing alt (alt="" works okay)
+    throw new Error(`Missing \`alt\` on myImage from: ${src}`);
+  }
+
+  let metadata = await Image(src, {
+    widths: [300],
+    formats: ["jpeg"],
+    outputDir: './dist/img'
+  });
+
+  let data = metadata.jpeg[metadata.jpeg.length - 1];
+  return data.url;
+}
+
 module.exports = function(eleventyConfig) {
     eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
+    eleventyConfig.addNunjucksAsyncShortcode("imageUrl", urlShortcode);
     // eleventyConfig.addFilter( "myFilter", function() {});
    eleventyConfig.setTemplateFormats(["njk", "ejs", "js", "css"]);
     return {
